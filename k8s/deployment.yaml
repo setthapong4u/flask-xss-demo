@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: flask-xss-demo
-          # IMPORTANT: update this to match DOCKER_IMAGE:IMAGE_TAG
-          image: YOUR_DOCKERHUB_USERNAME/flask-xss-demo:latest
+          
+          image: setthapong/xs-app-demo
           imagePullPolicy: Always
           ports:
             - containerPort: 80
