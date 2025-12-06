@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-xss-demo
+  labels:
+    app: flask-xss-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-xss-demo
+  template:
+    metadata:
+      labels:
+        app: flask-xss-demo
+    spec:
+      containers:
+        - name: flask-xss-demo
+          # IMPORTANT: update this to match DOCKER_IMAGE:IMAGE_TAG
+          image: YOUR_DOCKERHUB_USERNAME/flask-xss-demo:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
